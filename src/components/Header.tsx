@@ -1,17 +1,28 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
 
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Header</Text>
+      <StatusBar backgroundColor={"#007AFF"} barStyle={"light-content"} />
+      <Text style={styles.title}>My Todo</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
-  title: {},
+  container: {
+    backgroundColor: "#007AFF",
+    height: 80,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
   icon: {},
 });
 export default Header;
