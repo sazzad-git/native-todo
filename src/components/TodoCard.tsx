@@ -1,9 +1,10 @@
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { TodoData } from "../app";
 
-const TodoCard = () => {
-  const [isActive, setIsActive] = useState(false);
+const TodoCard = ({ title, time, isCompleted }: TodoData) => {
+  const [isActive, setIsActive] = useState(isCompleted);
   return (
     <TouchableOpacity
       style={styles.container}
@@ -17,11 +18,11 @@ const TodoCard = () => {
           color={isActive ? "#7A7777" : "black"}
         />
         <Text style={[isActive ? styles.inactiveTitles : styles.title]}>
-          TodoCard
+          {title}
         </Text>
       </View>
       <Text style={[styles.time, isActive && { color: "#7A7777" }]}>
-        6.00 am
+        {time}
       </Text>
     </TouchableOpacity>
   );
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderRadius: 8,
+    // marginBottom: 10,
   },
   title: {
     fontSize: 18,

@@ -2,9 +2,13 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-const ActionButton = () => {
+const ActionButton = ({ onPress }: { onPress: any }) => {
   return (
-    <TouchableOpacity style={styles.button} activeOpacity={0.8}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.button}
+      activeOpacity={0.8}
+    >
       <FontAwesome6 name="add" size={24} color="black" style={styles.icon} />
     </TouchableOpacity>
   );
